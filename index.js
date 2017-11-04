@@ -1,5 +1,6 @@
 var path = require("path");
 var express = require("express");
+var compression = require('compression')
 const app = express(),
   DIST_BUILD_DIR = path.join(__dirname, "/build/"),
   HTML_BUILD_FILE = path.join(DIST_BUILD_DIR, "index.html"),
@@ -16,7 +17,7 @@ app.get('*.js', function (req, res, next) {
     next();
   });
 
-
+app.use(compression())
 
 
   app.use(express.static(DIST_BUILD_DIR));
