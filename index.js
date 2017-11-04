@@ -16,7 +16,7 @@ app.get('*.js', function (req, res, next) {
     next();
   });
 
-app.use(compression());
+
 
 
   app.use(express.static(DIST_BUILD_DIR));
